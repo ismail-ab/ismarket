@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import axios from "axios";
 import Layout from "../../components/Layout";
 import Pagination from "../../components/Pagination";
-import ProductList from "../../components/Products";
+import ProductsList from "../../components/ProductsList";
 import { IProduct } from "../../types/product";
 
 interface IProductsProps {
@@ -11,11 +11,11 @@ interface IProductsProps {
   totalProducts: number;
 }
 
-const Products: React.FC<IProductsProps> = ({ products, totalProducts }) => {
+const Products: React.SFC<IProductsProps> = ({ products, totalProducts }) => {
   return (
     <Layout>
       <h2>Products</h2>
-      <ProductList products={products} />
+      <ProductsList products={products} />
       <Pagination urlResource="/products" totalElements={totalProducts} />
     </Layout>
   );

@@ -3,21 +3,23 @@ import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
 import axios from "axios";
 import Layout from "../../../components/Layout";
+import ProductSheet from "../../../components/ProductSheet";
 import { IProduct } from "../../../types/product";
 
 interface IProductProps {
   product: IProduct;
 }
 
-const Product: React.FC<IProductProps> = ({ product }) => {
+const Product: React.SFC<IProductProps> = ({ product }) => {
   const { isFallback } = useRouter();
 
   return (
     <Layout>
+      <h2>Product details</h2>
       {isFallback ? (
-        <div>Product not found</div>
+        <h4>Product not found</h4>
       ) : (
-        <div>Product: {product.title}</div>
+        <ProductSheet product={product} />
       )}
     </Layout>
   );

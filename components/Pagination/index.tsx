@@ -8,7 +8,7 @@ interface IPaginationProps {
   totalElements: number;
 }
 
-const Pagination: React.FC<IPaginationProps> = ({
+const Pagination: React.SFC<IPaginationProps> = ({
   urlResource,
   totalElements,
 }) => {
