@@ -14,6 +14,7 @@ interface IProductsProps {
 const Products: React.FC<IProductsProps> = ({ products, totalProducts }) => {
   return (
     <Layout>
+      <h2>Products</h2>
       <ul>
         {products &&
           products.map((product) => (
@@ -24,7 +25,7 @@ const Products: React.FC<IProductsProps> = ({ products, totalProducts }) => {
             </li>
           ))}
       </ul>
-      <Pagination uri="/products" totalElements={totalProducts} />
+      <Pagination urlResource="/products" totalElements={totalProducts} />
     </Layout>
   );
 };

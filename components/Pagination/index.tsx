@@ -4,11 +4,14 @@ import PageLink from "./PageLink";
 import styles from "./pagination.module.css";
 
 interface IPaginationProps {
-  uri: string;
+  urlResource: string;
   totalElements: number;
 }
 
-const Pagination: React.FC<IPaginationProps> = ({ uri, totalElements }) => {
+const Pagination: React.FC<IPaginationProps> = ({
+  urlResource,
+  totalElements,
+}) => {
   const {
     query: { page = 1, limit = 20 },
   } = useRouter();
@@ -25,11 +28,11 @@ const Pagination: React.FC<IPaginationProps> = ({ uri, totalElements }) => {
     <div className={styles.pagination}>
       <PageLink
         linkStyle={prevStyle}
-        goto={`${uri}?page=${
+        goto={`${urlResource}?page=${
           currentPageNumber - 1
         }&limit=${maxElementDisplayed}`}
       >
-        prev.
+        &lt;&lt;
       </PageLink>
       {[...Array(numberTotalOfPages)].map((_, index) => {
         const pageNumber = index + 1;
@@ -39,7 +42,7 @@ const Pagination: React.FC<IPaginationProps> = ({ uri, totalElements }) => {
           <PageLink
             key={pageNumber}
             linkStyle={currentPageNumber === pageNumber ? styles.active : ""}
-            goto={`${uri}?page=${pageToDisplay}&limit=${maxElementDisplayed}`}
+            goto={`${urlResource}?page=${pageToDisplay}&limit=${maxElementDisplayed}`}
           >
             {pageNumber}
           </PageLink>
@@ -47,11 +50,11 @@ const Pagination: React.FC<IPaginationProps> = ({ uri, totalElements }) => {
       })}
       <PageLink
         linkStyle={nextStyle}
-        goto={`${uri}?page=${
+        goto={`${urlResource}?page=${
           currentPageNumber + 1
         }&limit=${maxElementDisplayed}`}
       >
-        next.
+        &gt;&gt;
       </PageLink>
     </div>
   );

@@ -1,5 +1,7 @@
 .pagination {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
 }
 
 .pagination a {
@@ -10,7 +12,7 @@
 }
 
 .pagination a.active {
-  background-color: grey;
+  background-color: teal;
   color: white;
 }
 

@@ -3,8 +3,8 @@ import Layout from "../components/Layout";
 
 const Index: React.FC = () => {
   return (
-    <Layout title="Home">
-      <h1>Home page</h1>
+    <Layout>
+      <h2>Home</h2>
     </Layout>
   );
 };
