@@ -1,0 +1,33 @@
+.productCard {
+  cursor: pointer;
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.productCard img {
+  width: 30%;
+  object-fit: contain;
+}
+
+.productInfos {
+  margin-top: auto;
+  text-align: center;
+}
+
+.productInfos h2 {
+  color: teal;
+}
+
+.buyButton {
+  width: 100%;
+  background-color: teal;
+  height: 50px;
+  font-size: 18px;
+  color: white;
+  border: none;
+}
