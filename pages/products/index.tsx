@@ -1,10 +1,10 @@
 import React from "react";
 import { GetServerSideProps } from "next";
-import Link from "next/link";
 import axios from "axios";
 import Layout from "../../components/Layout";
 import Pagination from "../../components/Pagination";
-import { IProduct } from "./types";
+import ProductList from "../../components/Products";
+import { IProduct } from "../../types/product";
 
 interface IProductsProps {
   products: IProduct[];
@@ -15,16 +15,7 @@ const Products: React.FC<IProductsProps> = ({ products, totalProducts }) => {
   return (
     <Layout>
       <h2>Products</h2>
-      <ul>
-        {products &&
-          products.map((product) => (
-            <li key={product.id}>
-              <Link href="/products/[productid]" as={`/products/${product.id}`}>
-                <a>{product.title}</a>
-              </Link>
-            </li>
-          ))}
-      </ul>
+      <ProductList products={products} />
       <Pagination urlResource="/products" totalElements={totalProducts} />
     </Layout>
   );

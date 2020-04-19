@@ -45,20 +45,20 @@ export interface IProduct {
   objectID: string;
 }
 
-export interface Options {}
+interface Options {}
 
-export interface NamedTags {}
+interface NamedTags {}
 
-export interface Meta {
+interface Meta {
   finance: Finance;
   marketing?: Marketing;
 }
 
-export interface Finance {
+interface Finance {
   unit_price: number;
 }
 
-export interface Marketing {
+interface Marketing {
   etiquettable_score: number;
   yuka_score: number;
 }

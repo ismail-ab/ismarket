@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
 import axios from "axios";
 import Layout from "../../../components/Layout";
-import { IProduct } from "../types";
+import { IProduct } from "../../../types/product";
 
 interface IProductProps {
   product: IProduct;
