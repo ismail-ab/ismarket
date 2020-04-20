@@ -1,5 +1,4 @@
 .productCard {
-  cursor: pointer;
   padding: 2%;
   flex-grow: 1;
   flex-basis: 16%;
@@ -24,6 +23,7 @@
 }
 
 .buyButton {
+  cursor: pointer;
   width: 100%;
   background-color: teal;
   height: 50px;
