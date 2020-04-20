@@ -18,14 +18,13 @@
   },
   "devDependencies": {
     "@types/next": "9.0.0",
-    "@types/node": "^13.13.0",
+    "@types/node": "13.13.0",
     "@types/react": "16.9.34",
     "@zeit/next-typescript": "1.1.1",
     "husky": "4.2.5",
     "lint-staged": ">=10",
-    "nodemon": "^2.0.3",
     "prettier": "2.0.4",
-    "typescript": "^3.8.3"
+    "typescript": "3.8.3"
   },
   "husky": {
     "hooks": {

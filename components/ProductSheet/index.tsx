@@ -2,11 +2,11 @@ import React from "react";
 import { IProduct } from "../../types/product";
 import styles from "./productsheet.module.css";
 
-interface ProductSheetProps {
+interface IProductSheetProps {
   product: IProduct;
 }
 
-const ProductSheet: React.SFC<ProductSheetProps> = ({ product }) => {
+const ProductSheet: React.SFC<IProductSheetProps> = ({ product }) => {
   return (
     <section className={styles.productCard}>
       <img src={product.image} alt={product.title} />
@@ -22,7 +22,7 @@ const ProductSheet: React.SFC<ProductSheetProps> = ({ product }) => {
           <p>{product.body_html_safe}</p> {/* description field? */}
         </div>
         <button className={styles.buyButton}>
-          {product.inventory_management !== "0"
+          {product.inventory_quantity !== 0
             ? "Add to basket"
             : "Notify me once available"}
         </button>
